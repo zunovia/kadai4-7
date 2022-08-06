@@ -1,0 +1,14 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-lg-12 mx-auto">
+    <h2>Follow Users</h2>
+
+    <% if @user.followings.count == 0  %>
+    フォローしているユーザーはありません。
+    <% else %>
+    <%= render 'users/index',users: @users %>
+    <% end %>
+
+      </div>
+  </div>
+</div>
