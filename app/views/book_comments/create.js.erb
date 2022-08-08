@@ -1,0 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+$(".comments_area").html("<%= j(render 'book_comments/form', { book: @book}) %>")
+
+$("#book_comment_comment").val('')
