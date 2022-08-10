@@ -59,5 +59,7 @@ gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
 
+gem 'refile', require: 'refile/rails', github: 'refile/refile'
+
 
 
