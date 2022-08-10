@@ -12,20 +12,12 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  def join
-    @group = Group.find(params[:group_id])
-    @group.users << current_user
-    redirect_to  groups_path
-  end
-
-
 
   def new
     @group = Group.new
   end
 
   def create
-    @user = current_user
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
     if @group.save
