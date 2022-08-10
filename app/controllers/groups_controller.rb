@@ -5,13 +5,20 @@ class GroupsController < ApplicationController
   def index
     @book = Book.new
     @groups = Group.all
-    @user = current_user
   end
 
   def show
     @book = Book.new
     @group = Group.find(params[:id])
   end
+
+  def join
+    @group = Group.find(params[:group_id])
+    @group.users << current_user
+    redirect_to  groups_path
+  end
+
+
 
   def new
     @group = Group.new
